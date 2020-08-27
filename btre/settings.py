@@ -26,8 +26,8 @@ SECRET_KEY = 'x4nigz$)o!v#plo89wg$ogd2kokmzom9edgtbjqrn&@c7drlk&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['frozen-tor-80436.herokuapp.com']
-
+ALLOWED_HOSTS = []
+#  URL to replace -- 'frozen-tor-80436.herokuapp.com'
 
 # Application definition
 
@@ -84,25 +84,25 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 # Remote DB Conifigration
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2sl082k1vpr61',
-        'USER': 'dmaablgfuoovsv',
-        'PASSWORD': 'db11abf7a635dc9542e208275a5926fcac5642bff1e15c2b82cc46ee5b01ee37',
-        'HOST': 'ec2-18-235-109-97.compute-1.amazonaws.com',
-        'PORT': '5432',
-
-    }
-}
-
-# Local DB Conifigration
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'd2sl082k1vpr61',
+#         'USER': 'dmaablgfuoovsv',
+#         'PASSWORD': 'db11abf7a635dc9542e208275a5926fcac5642bff1e15c2b82cc46ee5b01ee37',
+#         'HOST': 'ec2-18-235-109-97.compute-1.amazonaws.com',
+#         'PORT': '5432',
+
 #     }
 # }
+
+# Local DB Conifigration
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -160,9 +160,9 @@ MESSAGE_TAGS = {
 }
 
 # Email CONFIG
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = '587'
-# EMAIL_HOST_USER = 'shivamrvgupta@gmail.com'
-# EMAIL_HOST_PASSWORD = 'Guptashivam04'
-# EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'shivamrvgupta@gmail.com'
+EMAIL_HOST_PASSWORD = 'Guptashivam04'
+EMAIL_USE_TLS = True
