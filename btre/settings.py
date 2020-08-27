@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+from django.contrib.messages import constants as messages
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -24,9 +25,9 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'x4nigz$)o!v#plo89wg$ogd2kokmzom9edgtbjqrn&@c7drlk&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [frozen-tor-80436.herokuapp.com]
 #  URL to replace -- 'frozen-tor-80436.herokuapp.com'
 
 # Application definition
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'btre.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMP_DIR,],
+        'DIRS': [TEMP_DIR, ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -84,25 +85,25 @@ WSGI_APPLICATION = 'btre.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 # Remote DB Conifigration
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd2sl082k1vpr61',
-#         'USER': 'dmaablgfuoovsv',
-#         'PASSWORD': 'db11abf7a635dc9542e208275a5926fcac5642bff1e15c2b82cc46ee5b01ee37',
-#         'HOST': 'ec2-18-235-109-97.compute-1.amazonaws.com',
-#         'PORT': '5432',
-
-#     }
-# }
-
-# Local DB Conifigration
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd2sl082k1vpr61',
+        'USER': 'dmaablgfuoovsv',
+        'PASSWORD': 'db11abf7a635dc9542e208275a5926fcac5642bff1e15c2b82cc46ee5b01ee37',
+        'HOST': 'ec2-18-235-109-97.compute-1.amazonaws.com',
+        'PORT': '5432',
+
     }
 }
+
+# Local DB Conifigration
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -154,7 +155,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # MESSAGES
 
-from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
