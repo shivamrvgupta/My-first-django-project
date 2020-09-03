@@ -27,8 +27,8 @@ SECRET_KEY = 'x4nigz$)o!v#plo89wg$ogd2kokmzom9edgtbjqrn&@c7drlk&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bt-real-estate-1080.herokuapp.com']
-#  URL to replace -- 'bt-real-estate-1080.herokuapp.com'
+ALLOWED_HOSTS = ['frozen-tor-80436.herokuapp']
+#  URL to replace -- 'frozen-tor-80436.herokuapp'
 
 # Application definition
 
